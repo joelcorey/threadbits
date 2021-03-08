@@ -1,16 +1,18 @@
 {
   "dependencies": {
+    "@stitches/react": "0.0.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1",
     "better-sqlite3": "^7.1.2",
     "cross-env": "^7.0.3",
     "electron-is-dev": "^1.2.0",
-    "electron-updater": "^4.3.5"
+    "electron-updater": "^4.3.5",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-draggable": "^4.4.3",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.0.1"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",

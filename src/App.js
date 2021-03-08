@@ -1,24 +1,19 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
+import Button from './component/stitches/button/button';
+import Wrapper from './component/stitches/wrapper/wrapper';
+import Menubar from './component/Menubar/Menubar';
+import Drag from './component/Drag/Drag';
+
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <Menubar />
+      <Button onClick={() => {alert('hello!')}}>hi</Button>
+      <Drag />
+    </Wrapper>
   );
 }
 
