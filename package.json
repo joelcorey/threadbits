@@ -46,12 +46,14 @@
   "build": {
     "productName": "Threadbits",
     "appId": "com.cordev.threadbits",
-    "publish": [{
-      "provider": "github",
-      "url": "https://github.com/joelcorey/mapsnap/releases",
-      "owner": "joelcorey",
-      "repo": "threadbits"
-    }],
+    "publish": [
+      {
+        "provider": "github",
+        "url": "https://github.com/joelcorey/mapsnap/releases",
+        "owner": "joelcorey",
+        "repo": "threadbits"
+      }
+    ],
     "nsis": {
       "oneClick": false,
       "perMachine": false,
@@ -95,6 +97,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-
+  }
 }
