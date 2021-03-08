@@ -5,8 +5,8 @@ require('dotenv').config()
 
 const { app, BrowserWindow, shell } = require("electron");
 // const { autoUpdater } = require('electron-updater');
-require('../src/message-control/application');
-require('../src/message-control/database-local-sqlite3');
+require('../src/message-control/application/main');
+require('../src/message-control/database-local-sqlite3/main');
 
 const isDev = require("electron-is-dev");
 // Conditionally include the dev tools installer to load React Dev Tools
@@ -54,7 +54,7 @@ function createWindow() {
     if('file://' === url.substr(0, 'file://'.length)) {
       return;
     }
-    // and open every other protocols on the browser      
+    // and open every other protocols on the browser
     e.preventDefault();
     shell.openExternal(url);
   });
