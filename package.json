@@ -1,0 +1,100 @@
+{
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.0.1",
+    "better-sqlite3": "^7.1.2",
+    "cross-env": "^7.0.3",
+    "electron-is-dev": "^1.2.0",
+    "electron-updater": "^4.3.5"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "electron": "^12.0.0",
+    "electron-builder": "^22.10.4",
+    "electron-devtools-installer": "^3.1.1",
+    "node-gyp": "^7.1.2",
+    "wait-on": "^5.2.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "postinstall": "electron-builder install-app-deps",
+    "dist:lin": "npm run build && electron-builder --linux -p never",
+    "dist:win": "npm run build && electron-builder --windows -p never",
+    "dist:win-nobuild": "electron-builder --windows -p never",
+    "deploy": "electron-builder --windows -p always"
+  },
+  "homepage": "./",
+  "main": "public/electron.js",
+  "private": true,
+  "author": {
+    "name": "Joel Corey",
+    "email": "hello@joelcorey.com",
+    "url": "https://joelcorey.com"
+  },
+  "name": "threadbits",
+  "description": "A data collection and automation tool",
+  "version": "0.0.1",
+  "build": {
+    "productName": "Threadbits",
+    "appId": "com.cordev.threadbits",
+    "publish": [{
+      "provider": "github",
+      "url": "https://github.com/joelcorey/mapsnap/releases",
+      "owner": "joelcorey",
+      "repo": "threadbits"
+    }],
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true
+    },
+    "linux": {
+      "category": "Utility",
+      "desktop": {
+        "Comment": "A data collection and automation tool",
+        "Name": "Threadbits",
+        "StartupNotify": "true",
+        "Terminal": "false",
+        "Type": "Application",
+        "Categories": "Database;Office;"
+      },
+      "target": [
+        "deb",
+        "snap"
+      ]
+    },
+    "files": [
+      "build/**/*",
+      "**/*"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+
+}
