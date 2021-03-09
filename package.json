@@ -6,6 +6,7 @@
     "@testing-library/user-event": "^12.1.10",
     "better-sqlite3": "^7.1.2",
     "cross-env": "^7.0.3",
+    "d3": "^6.5.0",
     "electron-is-dev": "^1.2.0",
     "electron-updater": "^4.3.5",
     "react": "^17.0.1",
