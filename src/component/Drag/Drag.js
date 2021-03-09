@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Draggable from 'react-draggable';
 
 function Drag(props) {
 
+  let [deltaXyPos, setDeltaXyPos] = useState({ x: 0, y: 0 })
+
+  const eventControl = (event, info) => {
+    if (event.type === 'mousemove') { //mousedown, mouseup
+      console.log('Event name: ', event.type);
+      console.log(event, info);
+    }
+  }
+
+  const handleDrag = (e, d) => {
+    const { x, y } = deltaXyPos;
+    setDeltaXyPos({ x: x + d.deltaX, y: y + d.deltaY })
+
+  };
+
   return (
     <Draggable
       handle=".handle"
+      grid={[25, 25]}
+      onDrag={handleDrag}
     >
       <div
         style={{
@@ -27,7 +44,7 @@ function Drag(props) {
           Source
         </div>
         <div>
-          hi
+          {deltaXyPos.x.toFixed(0)} {deltaXyPos.y.toFixed(0)}
         </div>
       </div>
     </Draggable>

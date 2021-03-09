@@ -18,3 +18,7 @@ Once XCode is installed, go to Preferences, Downloads, and install the Command L
 
 ### Available scripts  
 derp ...
+
+
+### Reading
+- https://www.pluralsight.com/guides/drawing-charts-in-react-with-d3
